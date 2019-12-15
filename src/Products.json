@@ -1,0 +1,57 @@
+[
+  {
+    "title": {
+      "name": "TIMES SQAURE",
+      "details": "Canapé-lit panoramique places gris clair"
+    },
+    "image": "https://cdn.maisonsdumonde.com/img/canape-lit-panoramique-7-places-gris-clair-times-square-200-7-8-174750_8.jpg",
+    "ref": "124580",
+    "category": "Canapes",
+    "price": 999.00,
+    "quantity":1
+  },
+  {
+    "title": {
+      "name": "CODY",
+      "details": "Lit 140x190 avec sommier à lattes et rangements"
+    },
+    "image": "https://medias.maisonsdumonde.com/image/upload/q_auto,f_auto/w_2000/img/lit-140x190-avec-sommier-a-lattes-et-rangements-1000-11-0-175111_2.jpg",
+    "ref": "124460",
+    "category": "Lits",
+    "price": 299.00,
+    "quantity":1
+  },
+  {
+    "title": {
+      "name": "JOY",
+      "details": "Bureau 4 tiroirs blanc"
+    },
+    "image": "https://medias.maisonsdumonde.com/image/upload/q_auto,f_auto/w_2000/img/bureau-4-tiroirs-blanc-1000-16-7-170526_1.jpg",
+    "ref": "145460",
+    "category": "Bureau",
+    "price": 299.00,
+    "quantity":1
+  },
+  {
+    "title": {
+      "name": "GALAXY",
+      "details": "Bureau 1 tiroir gris pieds en chêne"
+    },
+    "image": "https://medias.maisonsdumonde.com/image/upload/q_auto,f_auto/w_2000/img/bureau-1-tiroir-gris-pieds-en-chene-1000-1-1-193070_1.jpg",
+    "ref": "187060",
+    "category": "canapes",
+    "price": 199.00,
+    "quantity":1
+  },
+  {
+    "title": {
+      "name": "DAKOTA",
+      "details": "Banquette convertible 2/3 places gris anthracite"
+    },
+    "image": "https://medias.maisonsdumonde.com/image/upload/q_auto,f_auto/w_2000/img/banquette-convertible-2-3-places-gris-anthracite-1000-6-0-166419_1.jpg",
+    "ref": "267044",
+    "category": "canapes",
+    "price": 199.00,
+    "quantity":1
+  }
+]
