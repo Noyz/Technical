@@ -72,7 +72,6 @@ class App extends React.Component{
 	      ref:ref,
 	      viewCart:this.changeViewCart(obj)
 	    });
-	    console.log(obj, ref)
 	    var x;
 	    var revenue = [];
 	    const reducer = (accumulator, currentValue) => accumulator + currentValue;  
@@ -90,52 +89,50 @@ class App extends React.Component{
 		var thisFunction = this;
 		if(obj.length !== 0){
 			return(
-				<div className="py-3 px-2 pb-0 shadow border mb-3 cartNotEmpty">
-						<div>
-							<table className="table thead-dark table-responsive">
-								<thead className="thead-dark">
-									<tr>
-										<th className="w-25 d-none d-md-table-cell">Image</th>
-										<th>Produit</th>	
-										<th>Reference</th>
-										<th>Quantités</th>
-										<th>Prix</th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody className="align-middle">
-										{obj.map(function(object, i){
-											return( 
-												<tr key={i}>
-													<td className="w-25 d-none d-md-table-cell">
-														<img src={object.image} alt="" className="w-100"/>
-													</td>
-													<td className="w-50 align-middle">
-													{object.title.name}
-							            				<br/>
-									            		<small className="text-secondary">{object.title.details}</small>
-								            		</td>
-										            <td className="align-middle">
-										            	<small>Ref: {object.ref} </small>
-										            </td>
-										            <td className="align-middle text-right">
-										            	<div role="group" className="btn-group">
-										            		<button type="button" className="btn btn-light" onClick={() => {thisFunction.productQuantityDown(object)}}>-</button>
-										            		<button type="button" className="btn btn-disable">{object.quantity}</button>
-										            		<button type="button" className="btn btn-light" onClick={() => {thisFunction.productQuantityUp(object)}}>+</button>
-										            	</div>
-									            	</td>
-									            	<td className="align-middle">{object.price * object.quantity}&nbsp;€</td>
-									            	<td className="align-middle">
-										            	<button title="supprimer" type="button" className="btn btn-outline-dark" onClick={() => {thisFunction.productQuantityDelete(object)}}>X</button>
-									            	</td>
-												</tr>
-											)
-										})}
-		            			</tbody>
-	            			</table>
-            			</div>
-        			</div>
+					<div>
+						<table className="table thead-dark table-responsive">
+							<thead className="thead-dark">
+								<tr>
+									<th className="w-25 d-none d-md-table-cell">Image</th>
+									<th>Produit</th>	
+									<th>Reference</th>
+									<th>Quantités</th>
+									<th>Prix</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody className="align-middle">
+									{obj.map(function(object, i){
+										return( 
+											<tr key={i}>
+												<td className="w-25 d-none d-md-table-cell">
+													<img src={object.image} alt="" className="w-100"/>
+												</td>
+												<td className="w-50 align-middle">
+												{object.title.name}
+													<br/>
+													<small className="text-secondary">{object.title.details}</small>
+												</td>
+												<td className="align-middle">
+													<small>Ref: {object.ref} </small>
+												</td>
+												<td className="align-middle text-right">
+													<div role="group" className="btn-group">
+														<button type="button" className="btn btn-light" onClick={() => {thisFunction.productQuantityDown(object)}}>-</button>
+														<button type="button" className="btn btn-disable">{object.quantity}</button>
+														<button type="button" className="btn btn-light" onClick={() => {thisFunction.productQuantityUp(object)}}>+</button>
+													</div>
+												</td>
+												<td className="align-middle">{object.price * object.quantity}&nbsp;€</td>
+												<td className="align-middle">
+													<button title="supprimer" type="button" className="btn btn-outline-dark" onClick={() => {thisFunction.productQuantityDelete(object)}}>X</button>
+												</td>
+											</tr>
+										)
+									})}
+							</tbody>
+						</table>
+					</div>
 			)
 		}else{
 			return(
@@ -146,22 +143,30 @@ class App extends React.Component{
 		}
 	}
 	render(){
+		var x;
+		var cartLength = 0;
+		for(x in this.state.inCart){
+			cartLength += this.state.inCart[x].quantity
+		}
+
 		return (
-			<div className="App">
+			<div className="App " >
 				<div className="container-fluid">
 					<nav className="navbar navbar-light bg-light shadow w-100">
-					  	<a className="navbar-brand" href="www.google.fr" >Cart</a>
-					  	<div onClick={() => {console.log(this.state)}}>Panier <p className="itemInCart">{this.state.inCart.length}</p></div>
+					  	<a className="navbar-brand" href="www.google.fr" >Mon projet panier</a>
+						<div onClick={() => {console.log(this.state)}}>Panier <span data-v-d39b0b74="" className="badge badge-success">{cartLength}</span></div>
 					</nav>
 					<div id="mdm-cart" className="container">
 						<h1 className="title border-bottom mb-5 display-1">Mon panier</h1>
 						<div className="content">
-							<div className="basket col-8">
-								<Cart  viewCart={this.state.viewCart} handler={this.handler} inCart={this.state.inCart} revenue={this.state.revenue}/>
-							</div>
-							<div className="liste col-4">
-								<h2>Produits en relation :</h2>
-								<Listitems key={Products.id} data={Products} handler={this.handler} reference={this.state.ref} inCart={this.state.inCart}/>
+							<div className="row">
+								<div className="basket col-md-8">
+									<Cart  viewCart={this.state.viewCart} handler={this.handler} inCart={this.state.inCart} revenue={this.state.revenue}/>
+								</div>
+								<div className="liste col-md-4">
+									<h2>Produits en relation :</h2>
+									<Listitems key={Products.id} data={Products} handler={this.handler} reference={this.state.ref} inCart={this.state.inCart}/>
+								</div>
 							</div>
 						</div>
 					</div>

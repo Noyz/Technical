@@ -64,7 +64,7 @@ class Listitems extends React.Component{
 										<img src={object.image} alt="Canapé-lit panoramique 7 places gris clair" className="w-100"/>
 									</div>
 									<div className="col">
-										<strong id="description">{object.title.details}</strong>
+										<strong id="description">{object.title.name}</strong>
 										<div id="price" className="text-secondary font-weight-bold mb-2">{object.price}€</div>
 				          				<button type="button" className="btn btn-secondary" onClick={() => {thisFunction.addToCart(object)}}>
 				          					<small>Ajouter au panier</small>

@@ -1,57 +1,57 @@
 [
   {
     "title": {
-      "name": "TIMES SQAURE",
-      "details": "Canapé-lit panoramique places gris clair"
+      "name": "Zelda Link Awakening",
+      "details": "Le classique de Game Boy s'offre une nouvelle jeunesse sur Nintendo Switch, dans une version entièrement retravaillée"
     },
-    "image": "https://cdn.maisonsdumonde.com/img/canape-lit-panoramique-7-places-gris-clair-times-square-200-7-8-174750_8.jpg",
+    "image": "https://jouetsdenoel.carrefour.fr/uploads/products/0045496424442_0.jpg",
     "ref": "124580",
     "category": "Canapes",
-    "price": 999.00,
+    "price": 49,
     "quantity":1
   },
   {
     "title": {
-      "name": "CODY",
-      "details": "Lit 140x190 avec sommier à lattes et rangements"
+      "name": "Super Mario Maker 2",
+      "details": "Jouez et créez les stages Super Mario de vos rêves grâce aux nouvelles fonctionnalités, aux nouveaux outils et aux nouveaux éléments de Super Mario Maker 2"
     },
-    "image": "https://medias.maisonsdumonde.com/image/upload/q_auto,f_auto/w_2000/img/lit-140x190-avec-sommier-a-lattes-et-rangements-1000-11-0-175111_2.jpg",
+    "image": "https://jouetsdenoel.carrefour.fr/processedfiles/cache/detail/uploads/products/0045496424350_0.jpg",
     "ref": "124460",
     "category": "Lits",
-    "price": 299.00,
+    "price": 49,
     "quantity":1
   },
   {
     "title": {
-      "name": "JOY",
-      "details": "Bureau 4 tiroirs blanc"
+      "name": "Super Smash Bros",
+      "details": "Des mondes de jeux et des combattants légendaires se retrouvent pour l'affrontement ultime dans le nouvel opus de la série Super Smash Bros"
     },
-    "image": "https://medias.maisonsdumonde.com/image/upload/q_auto,f_auto/w_2000/img/bureau-4-tiroirs-blanc-1000-16-7-170526_1.jpg",
+    "image": "https://jouetsdenoel.carrefour.fr/processedfiles/cache/detail/uploads/products/0045496422868_0.jpg",
     "ref": "145460",
     "category": "Bureau",
-    "price": 299.00,
+    "price": 54.00,
     "quantity":1
   },
   {
     "title": {
-      "name": "GALAXY",
-      "details": "Bureau 1 tiroir gris pieds en chêne"
+      "name": "Super Mario Odessey",
+      "details": "Rejoignez Mario dans une vaste aventure en 3D à travers le globe et servez-vous de ses nouveaux pouvoirs incroyables pour récolter des Lunes afin d'alimenter votre vaisseau, l'Odyssée, et sauver la princesse Peach qui a une nouvelle fois été kidnappée par Bowser !"
     },
-    "image": "https://medias.maisonsdumonde.com/image/upload/q_auto,f_auto/w_2000/img/bureau-1-tiroir-gris-pieds-en-chene-1000-1-1-193070_1.jpg",
+    "image": "https://jouetsdenoel.carrefour.fr/processedfiles/cache/detail/uploads/products/0045496420888_0.jpg",
     "ref": "187060",
     "category": "canapes",
-    "price": 199.00,
+    "price": 44.00,
     "quantity":1
   },
   {
     "title": {
-      "name": "DAKOTA",
-      "details": "Banquette convertible 2/3 places gris anthracite"
+      "name": "Console Nintendo Switch Neon V2 2019",
+      "details": "Nouvelle version 2019 de la console Nintendo Switch (jusqu'à 9 heures d'autonomie). À la maison, la Nintendo Switch est installée dans la station d'accueil Nintendo Switch qui assure sa connexion au téléviseur, vous permettant de jouer en famille ou avec vos amis dans le confort de votre salon."
     },
-    "image": "https://medias.maisonsdumonde.com/image/upload/q_auto,f_auto/w_2000/img/banquette-convertible-2-3-places-gris-anthracite-1000-6-0-166419_1.jpg",
+    "image": "https://jouetsdenoel.carrefour.fr/processedfiles/cache/detail/uploads/products/0045496452629_0.jpg",
     "ref": "267044",
     "category": "canapes",
-    "price": 199.00,
+    "price": 299.99,
     "quantity":1
   }
 ]

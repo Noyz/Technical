@@ -27,7 +27,7 @@ class Cart extends React.Component{
 						<strong>Total: </strong>
 					</div>
 					<div className="ml-auto">
-						<strong>{this.props.revenue}€</strong>
+						<strong>{this.props.revenue} €</strong>
 					</div>
 				</div>
 				<div className="d-flex mb-5">
