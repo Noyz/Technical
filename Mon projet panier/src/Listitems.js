@@ -8,29 +8,17 @@ class Listitems extends React.Component{
 		super(props);
 		this.state = {
 			inCart : [],
-			Listitems:[this.props],
 			ref:[]
 		}
 	}
 	addToCart (object){
 		if(this.props.reference.length === 0){
-
 				this.state.ref = []
 				this.state.inCart = []
 				this.state.ref.push(object.ref)
 				this.state.inCart.push(object)
 				this.setState({ref:this.state.ref})
 				this.setState({inCart:this.state.inCart})
-				/*const shadowRef = [object.ref]
-				const shadowInCart = [object]
-
-				const shadowState = Object.assign({}, this.state);
-
-				shadowState.inCart = shadowInCart
-				shadowState.ref = shadowRef
-				this.setState(shadowState)
-				this.props.handler(shadowInCart, shadowRef);*/
-
 		}else{
 			var x;
 			if(this.props.reference.indexOf(object.ref) > -1){ 
@@ -48,7 +36,6 @@ class Listitems extends React.Component{
 				this.setState({inCart:this.state.inCart})
 			}
 		}
-
 		this.props.handler(this.state.inCart, this.state.ref);
 	}
 	render(){

@@ -43,7 +43,7 @@
   height:76px;
 }
 
-.content,.item{
+.item{
   display:flex;
 }
 li{
