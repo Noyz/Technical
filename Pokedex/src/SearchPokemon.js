@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import './bootstrap.min.css';
+import PokemonDetails from './PokemonDetails.js'
+
 
 
 
@@ -42,48 +44,68 @@ class SearchPokemon extends React.Component{
             this.props.rooting("pokedex");
         }, 10);
 		
-	}
+    }
+    _loadPokemonsFromType(type){
+        var texte = type.target.value;
+		var newPokemonArray = [];
+		this.props.originalListe.forEach(function(element) {
+  			if(element.types[1] !== undefined){
+                if(element.types[0].type.name === texte || element.types[1].type.name === texte){
+                    newPokemonArray.push(element)
+                }
+              }else{
+                  if(element.types[0].type.name === texte){
+                    newPokemonArray.push(element)
+                  }
+              }
+        });
+		this.props.handlerPokemon(newPokemonArray);
+        setTimeout(() => {
+            this.props.rooting("pokedex");
+        }, 10);
+		
+    }
+    _gotoPokemonDetails(item){
+        this.props.handlerView(<PokemonDetails pokemon={item}/>)
+    }
     render(){
         return(
             <div className="row">
+                <form className="searchFormByName col-4">
+                    <div className="form-group">
+                        <label htmlFor="">Number</label>
+                        <input type="number" className="w-30 form-control" id="exampleInputPassword1" placeholder="#" onChange={(number) => this._loadPokemonsFromNumber(number.target.value)}/>
+                    </div>
+                </form>
                <form className="searchFormByName col-4">
                     <div className="form-group">
                         <label htmlFor="">Name</label>
                         <input type="name" className="form-control" id="" aria-describedby="" placeholder="Enter Pokemon's name" onChange={(text) => {this._loadPokemonsFromSearchText(text)}}/>
                     </div>
                 </form>
-                <form className="searchFormByName col-4">
-                <div className="form-group">
-                        <label htmlFor="">Number</label>
-                        <input type="number" className="form-control" id="exampleInputPassword1" placeholder="Enter Pokemon's number" onChange={(number) => this._loadPokemonsFromNumber(number.target.value)}/>
-                    </div>
-                </form>
                 <form className="searchFormBySelect col-4">
                     <div className="form-group">
                         <label htmlFor="">Type</label>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown button
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Fire</a>
-                                <a class="dropdown-item" href="#">Water</a>
-                                <a class="dropdown-item" href="#">Grass</a>
-                                <a class="dropdown-item" href="#">Flying</a>
-                                <a class="dropdown-item" href="#">Fighting</a>
-                                <a class="dropdown-item" href="#">Pyschic</a>
-                                <a class="dropdown-item" href="#">Dark</a>
-                                <a class="dropdown-item" href="#">Ghost</a>
-                                <a class="dropdown-item" href="#">Normal</a>
-                                <a class="dropdown-item" href="#">Fairy</a>
-                                <a class="dropdown-item" href="#">Dragon</a>
-                                <a class="dropdown-item" href="#">Steel</a>
-                                <a class="dropdown-item" href="#">Electric</a>
-                                <a class="dropdown-item" href="#">Rock</a>
-                                <a class="dropdown-item" href="#">Ground</a>
-                                <a class="dropdown-item" href="#">Ice</a>
-                                <a class="dropdown-item" href="#">Poison</a>
-                            </div>
+                        <div>
+                            <select onChange={(value) => {this._loadPokemonsFromType(value)}}>
+                                <option className="dropdown-item" value="fire" href="#">Fire</option>
+                                <option className="dropdown-item" value="water" href="#">Water</option>
+                                <option className="dropdown-item" value="grass" href="#">Grass</option>
+                                <option className="dropdown-item" value="flying" href="#">Flying</option>
+                                <option className="dropdown-item" value="fighting" href="#">Fighting</option>
+                                <option className="dropdown-item" value="pyschic" href="#">Pyschic</option>
+                                <option className="dropdown-item" value="dark" href="#">Dark</option>
+                                <option className="dropdown-item" value="ghost" href="#">Ghost</option>
+                                <option className="dropdown-item" value="normal" href="#">Normal</option>
+                                <option className="dropdown-item" value="fairy" href="#">Fairy</option>
+                                <option className="dropdown-item" value="dragon" href="#">Dragon</option>
+                                <option className="dropdown-item" value="steel" href="#">Steel</option>
+                                <option className="dropdown-item" value="electric" href="#">Electric</option>
+                                <option className="dropdown-item" value="rock" href="#">Rock</option>
+                                <option className="dropdown-item" value="ground" href="#">Ground</option>
+                                <option className="dropdown-item" value="ice" href="#">Ice</option>
+                                <option className="dropdown-item" value="poison" href="#">Poison</option>
+                            </select>
                         </div>
                     </div>
                 </form>

@@ -3,7 +3,10 @@ import './App.css';
 import './bootstrap.min.css';
 import Home from './Home.js'
 import Pokedex from './Pokedex.js'
+
 import { getPokemonFromDataBaseForAll } from './PokemonAPI.js'
+import LazyLoad from 'react-lazyload';
+
 
 
 
@@ -23,7 +26,7 @@ class App extends React.Component{
     switch(e) {
         case "pokedex":
           console.log(this.state.pokemonArray)
-          this.handlerView(<Pokedex pokemonArray={this.state.pokemonArray} originalListe={this.state.originalListe} rooting={this.rooting} handlerPokemon={this.handlerPokemon}/>)  
+          this.handlerView(<Pokedex pokemonArray={this.state.pokemonArray} originalListe={this.state.originalListe} rooting={this.rooting} handlerPokemon={this.handlerPokemon} handlerView={this.handlerView}/>)  
           break;
         case "teams":
           break;
@@ -70,17 +73,13 @@ class App extends React.Component{
                   <li className="nav-item active">
                     <button id="pokedex" className="btn-view" onClick={(e) => {this.rooting(e.target.id)}}>Pokedex <span className="sr-only">(current)</span></button>
                   </li>
-                  <li className="nav-item">
-                    <button id="teams" className="btn-view"  onClick={(e) => {this.rooting(e)}}>Teams</button>
-                  </li>
-                  <li className="nav-item">
-                    <button id="Games" className="btn-view"  onClick={(e) => {this.rooting(e)}}>Games</button>
-                  </li>
                 </ul>
                 </div>
             </nav>
             <div className="container-fluid">
+            <LazyLoad height={200}>
               {this.state.view}
+              </LazyLoad>
             </div>
       </div>
     );
