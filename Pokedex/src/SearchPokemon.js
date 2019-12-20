@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import './bootstrap.min.css';
-import PokemonDetails from './PokemonDetails.js'
 
 
 
@@ -64,9 +63,6 @@ class SearchPokemon extends React.Component{
             this.props.rooting("pokedex");
         }, 10);
 		
-    }
-    _gotoPokemonDetails(item){
-        this.props.handlerView(<PokemonDetails pokemon={item}/>)
     }
     render(){
         return(

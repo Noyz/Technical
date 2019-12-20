@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import './bootstrap.min.css';
 import Listitems from './Listitems.js';
@@ -6,7 +6,7 @@ import Cart from './Cart.js';
 import Products from './Products.json'
 
 
-class App extends React.Component{
+class App extends Component{
 	constructor(props){
 		super(props);
 		this.handler = this.handler.bind(this)

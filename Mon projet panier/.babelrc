@@ -1,0 +1,4 @@
+"plugins": [
+  ["import", { "libraryName": "React", "libraryDirectory": "react"}, "react"],
+  ["import", { "libraryName": "antd-mobile", "libraryDirectory": "lib"}, "antd-mobile"]
+]
