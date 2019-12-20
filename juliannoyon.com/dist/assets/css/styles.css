@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+a:link,
+a:visited {
+  list-style: none;
+  color: rgba(255, 255, 255, .7);
+}
+
+body {
+  font-family: 'Arvo', serif;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.hide_navbar {
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+}
+
+section {
+  padding-bottom: 150px;
+}
+
+.no-mb {
+  margin-bottom: 0;
+}
+
+.blur {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  margin: 0;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: contain;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+}
+
+.introduction {
+  height: 100vh;
+  text-align: center;
+  color: #dddcdb;
+  background-image: url('../../../src/assets/img/clouds.jpg');
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+.introduction h1 {
+  font-family: 'Merienda One', cursive;
+  font-size: 60px;
+  display: none;
+  margin-top: 50vh;
+  margin-bottom: 30px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.introduction h1 span {
+  font-size: 14px;
+}
+
+.introduction .indicators-arrow-work {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.introduction .indicators-arrow-work a {
+  text-decoration: none;
+  opacity: .8;
+  color: #dddcdb;
+  outline: none;
+}
+
+.about_me {
+  position: relative;
+  color: black;
+  background-color: white;
+}
+
+.about_me .description img {
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+#professional {
+  background-image: url('../../../src/assets/img/header.jpg');
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+#professional h2 {
+  margin-bottom: 50px;
+  color: #dddcdb !important;
+}
+
+#professional h4 {
+  font-size: 18px;
+}
+
+#professional h5 {
+  font-size: 16px;
+}
+
+.technologies .fa-star {
+  opacity: 0;
+}
+
+.realisation {
+  background-image: url('../../../src/assets/img/jordan.jpg');
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+.realisation .project_bloc {
+  position: relative;
+  margin-bottom: 50px;
+  text-align: justify;
+  box-shadow: 0 0 5px rgba(6, 6, 6, .4);
+  bzckground-color: #f5f5f5;
+}
+
+.realisation .project_bloc img {
+  width: 100%;
+}
+
+.realisation .realisation-title {
+  padding: 50px 0;
+  color: #dddcdb;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  transition: opacity 1s;
+  text-align: center;
+  opacity: .4;
+  color: white;
+  background-color: black;
+}
+
+.overlay-active {
+  transition: opacity 1s;
+  opacity: .8;
+}
+
+.overlay_text {
+  position: absolute;
+  top: 40%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  transition: opacity 1s;
+  text-align: center;
+  opacity: 0;
+  color: rgba(255, 255, 255, .7);
+}
+
+.overlay_text-active {
+  transition: opacity 1s;
+  opacity: 1;
+  color: white;
+}
+
+.overlay_text-active a,
+.overlay_text-active h3,
+.overlay_text-active p {
+  font-weight: bold;
+  color: white !important;
+}
+
+.social-share {
+  position: fixed;
+  z-index: 1000;
+  right: 5%;
+  bottom: 5%;
+  display: none;
+  width: 15%;
+}
+
+.social-share .icon {
+  padding: 0 10px;
+}
+
+.burger-menu {
+  position: fixed;
+  z-index: 1000;
+  top: 5%;
+  left: 5%;
+  display: none;
+  width: 15%;
+}
+
+.falling-leaves {
+  overflow: hidden;
+  -webkit-transform: translate(0%, 0);
+          transform: translate(0%, 0);
+  border: 20px solid #fff;
+  border-radius: 50px;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.leaf-scene {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.leaf-scene div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: url('../../../src/assets/img/leaf.svg') no-repeat;
+  background-size: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+}
+
+.spin {
+  -webkit-animation: spin 2s infinite;
+          animation: spin 2s infinite;
+  box-shadow: 0 0 0 rgba(204, 169, 44, .4);
+}
+
+.pulse:hover {
+  -webkit-animation: none;
+          animation: none;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.clear {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+
+section {
+  padding: 60px 0;
+}
+
+section .section-title {
+  margin-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #007b5e;
+}
+
+.form {
+  justify-content: center;
+}
+
+.form label {
+  color: white;
+}
+
+#footer {
+  text-align: center;
+  background: black !important;
+}
+
+#footer h5 {
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  color: #fff;
+  border-left: 3px solid #eee;
+}
+
+#footer a {
+  text-decoration: none !important;
+  color: #fff;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+#footer ul.social li {
+  padding: 3px 0;
+}
+
+#footer ul.social li a i {
+  font-size: 25px;
+  margin-right: 5px;
+  transition: .5s all ease;
+}
+
+#footer ul.social li:hover a i {
+  font-size: 30px;
+  margin-top: -10px;
+}
+
+#footer ul.social li a,
+#footer ul.quick-links li a {
+  color: #fff;
+}
+
+#footer ul.social li a:hover {
+  color: #eee;
+}
+
+#footer ul.quick-links li {
+  padding: 3px 0;
+  transition: .5s all ease;
+}
+
+#footer ul.quick-links li:hover {
+  font-weight: 700;
+  margin-left: 5px;
+  padding: 3px 0;
+}
+
+#footer ul.quick-links li a i {
+  margin-right: 5px;
+}
+
+#footer ul.quick-links li:hover a i {
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  #footer h5 {
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    padding-left: 0;
+    border-left: transparent;
+  }
+}
