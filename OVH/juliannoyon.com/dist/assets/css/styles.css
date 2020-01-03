@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+@font-face {
+  font-family: "Assassins";
+  src: url("./font/Assassin$.ttf") format("ttf"),
+         url("./font/Assassin$.ttf") format("woff");
+ }
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -9,7 +14,9 @@ a:visited {
 }
 
 body {
-  font-family: 'Arvo', serif;
+  /* font-family: 'Arvo', serif; */
+  font-family: 'Assassins', serif;
+
 }
 
 .show {

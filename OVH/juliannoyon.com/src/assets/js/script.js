@@ -15,23 +15,20 @@ $(document).ready(function(){
 		"HTML 5" :'3',
 		"CSS 3": "3",
 		"Javascript":"3",
-		"SQL":"1",
 		"jQuery":"3",
-		"React Js":"1",
+		"React Js":"2",
 		"Less/Sass/Scss":"2",
 		"Bootstrap":"2",
 		"Node.js":"2",
 		"Express.js":"3",
-		"Websocket":"1",
-		"Ajax":"2",
 		"GIT":"2",
 		"MongoDb":"1",
-		"MySQL":"1",
 		"Photoshop":"2",
 		"Gulp":"2",
 		"Npm":"3",
 		"Windows":"5",
-		"MacOs":"1"
+		"MacOs":"2",
+		"Linux":"1"
 	};
 
 	$('.introduction h1').fadeIn(1500);
@@ -85,7 +82,9 @@ $(document).ready(function(){
 			var this_title;
 			var this_title_rating;
 			for (key in arraySkills) {
+				console.log($('.technologies .list-group-item .title'))
 				for(var i = 0; i < $('.technologies .list-group-item .title').length;i++){
+					
 					if($('.technologies .list-group-item .title')[i].innerHTML == key){
 						this_title = $('.technologies .list-group-item .title')[i];
 						this_title_rating = $(this_title).siblings();
