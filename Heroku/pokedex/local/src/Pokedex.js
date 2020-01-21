@@ -18,7 +18,6 @@ class Pokedex extends React.Component{
             return 0;
           }
         return (
-            
             <div>
                 <div className="row">
                     <div className="searchView container-fluid">
@@ -44,8 +43,8 @@ class Pokedex extends React.Component{
                                                 }else{
                                                     return(
                                                         <div className="">
-                                                                <p className={item.types[0].type.name +" type"}>{item.types[0].type.name}</p>
-                                                                <p className={item.types[1].type.name +" type type2"}>{item.types[1].type.name}</p>
+                                                                <p className={item.types[0].type.name +"type"}>{item.types[0].type.name}</p>
+                                                                <p className={item.types[1].type.name +"type type2"}>{item.types[1].type.name}</p>
                                                         </div>
                                                     )
                                                 }
