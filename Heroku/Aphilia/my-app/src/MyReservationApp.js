@@ -3,33 +3,32 @@ import './App.css';
 import './bootstrap.min.css';
 import DatePicker from "react-datepicker";
 import Schedule from "./Schedule.js";
+import BookingForm from "./BookingForm.js";
+import BookingConfirmation from "./BookingConfirmation.js";
 import "react-datepicker/dist/react-datepicker.css";
 
 
 class MyReservationApp extends React.Component{
     constructor(props){
         super(props)
-        this.handlerReservationTime = this.handlerReservationTime.bind(this)
-        this.handlerTableSet = this.handlerTableSet.bind(this)
-        this.handlerReservationDate = this.handlerReservationDate.bind(this)
-        this.handleOptionChange = this.handleOptionChange.bind(this)
-        this.handleCivility = this.handleCivility.bind(this)
-        this.handleFirstname = this.handleFirstname.bind(this)
-        this.handleName = this.handleName.bind(this)
 		this.state = {
             tabletSet:"1",
-            startDate: new Date(),
-            globalReservation:[],
-            selectedOption: 'Mr'
-            
+            startDate: new Date()
         }
     }
-    handleChange = date => {
+    handleTableset = (changeEvent) =>{
         this.setState({
-            startDate: date
+            tabletSet: changeEvent
         });
     }
-    handlerReservationTime = time =>{
+    handleDate = date => {
+        this.setState({
+            startDate: date,
+            date:date
+        });
+        this.handleTime(date)
+    }
+    handleTime = time =>{
         const newArrayTime = [];
         const obj = {
             table:this.state.tabletSet,
@@ -42,29 +41,10 @@ class MyReservationApp extends React.Component{
             globalReservation:newArrayTime 
         });
     }
-    handlerReservationDate = object =>{
-        this.setState({
-            reservationDate: object
-        });
-    }
-    handlerTableSet = object =>{
-        this.setState({
-            tabletSet: object
-        });
-    }
-    handleOptionChange = (changeEvent) =>{
-        this.setState({
-          selectedOption: changeEvent.target.value
-        });
-    }
+
     handleCivility = (changeEvent) =>{
         this.setState({
           civility: changeEvent.target.value
-        });
-    }
-    handlePhone = (changeEvent) =>{
-        this.setState({
-          phone: changeEvent.target.value
         });
     }
     handleFirstname = (changeEvent) =>{
@@ -77,7 +57,13 @@ class MyReservationApp extends React.Component{
           name: changeEvent.target.value
         });
     }
-    handlerSubmit = (formSubmitEvent) => {
+    handlePhone = (changeEvent) =>{
+        this.setState({
+          phone: changeEvent.target.value
+        });
+    }
+    
+    handleSubmit = (formSubmitEvent) => {
         const newArrayInfo = [];
         const obj = {
             table:this.state.tabletSet,
@@ -88,14 +74,22 @@ class MyReservationApp extends React.Component{
             name:this.state.name,
             phone:this.state.phone
         }
+        var GivenDate = obj.date;
+        var CurrentDate = new Date();
+        GivenDate = new Date(GivenDate);
+        
         newArrayInfo.push(obj)
-        this.setState({
-            reservation: "ok",
-            globalInformation:newArrayInfo
-          });
+        if(GivenDate < CurrentDate){
+            alert('Given date is not greater than the current date.');
+            return false;
+        }else{
+            this.setState({
+                reservation: "ok",
+                globalInformation:newArrayInfo
+              });
+        }
       }
     render(){
-        console.log(this.state.globalInformation)
         return(
             <div>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -106,7 +100,7 @@ class MyReservationApp extends React.Component{
                             <div className="row">
                                 <div className="table_set_picker col-6" >
                                     <label htmlFor="tablet_set">Tablet_set: </label>
-                                    <select onChange={(e) => {this.handlerTableSet(e.target.value)}}>
+                                    <select onChange={(e) => {this.handleTableset(e.target.value)}}>
                                         <option value="1">1 table_set</option>
                                         <option value="2">2 table_sets</option>
                                         <option value="3">3 table_sets</option>
@@ -119,104 +113,32 @@ class MyReservationApp extends React.Component{
                                         <option value="10">10 table_sets</option>
                                         <option value="11">11 table_sets</option>
                                         <option value="12">12 table_sets</option>
-                                        <option value="More">More</option>
                                     </select>
                                 </div>
                                 <div className="reservation_date_picker col-6">
                                     <label>Start date:</label>
-                                    <DatePicker selected={this.state.startDate} onChange={this.handleChange}/>
+                                    <div>
+                                        <DatePicker selected={this.state.startDate} onChange={this.handleDate} />
+                                    </div>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col-12">
-                                <div className="reservation_hour_picker ">
-                                    <label>Choose an hour:</label>
-                                        <Schedule date={this.state.startDate} handlerDefault={this.state.handlerDefault} handlerReservationTime={this.handlerReservationTime}/>
+                                    <div className="reservation_hour_picker">
+                                        <label>Choose an hour:</label>
+                                        <div>
+                                            <Schedule date={this.state.startDate} handleTime={this.handleTime} />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                     </div>
                 </div>
                 <div>
-                    <div className="col-12">
-                        <div className="row">
-                            {(() => {switch (typeof this.state.reservationTime === "string" && this.state.startDate.getDay() === 2 || this.state.startDate.getDay() === 6) {
-                                        
-                                        case true : return ([
-                                            <div id="booking_information" key="1"  className="container">
-                                                {this.state.globalReservation.map(function(item, i){
-                                                    return(<div className="item" key={1}>You have chosen <span className="reservation_info">{item.table}</span> table sets for the <span className="reservation_info">{item.date.toString().substr(0, 15)}</span> at <span className="reservation_info">{item.time}</span></div>)
-                                                    })}
-                                                <div>Please enter your personnal information:</div>
-                                                <form className="booking_form" onSubmit={(e) => {e.preventDefault();this.handlerSubmit()}}>
-                                                    <div className="informations">
-                                                        <div className="col-12">
-                                                            <div id="civility">
-                                                                <label htmlFor="civility">Civility:</label>
-
-                                                                <label htmlFor="mr">Mr</label>
-                                                                <input className="civility_radio" type="radio" value="Mr" checked={this.state.selectedOption === 'Mr'} onChange={this.handleOptionChange}/>
-
-                                                                <label htmlFor="mrs">Mrs</label>
-                                                                <input className="civility_radio" type="radio" value="Mrs" checked={this.state.selectedOption === 'Mrs'} onChange={this.handleOptionChange}/>
-                                                            </div>
-                                                        </div>
-                                                            <div className="col-12">
-                                                                <label htmlFor="firstname">Firstname:</label>
-                                                                <input type="text" id="firstname" onChange={event => {this.handleFirstname(event)}}  required/>
-                                                            </div>
-                                                            <div className="col-12">
-                                                                <label htmlFor="Name">Name:</label>
-                                                                <input type="text" id="name" onChange={event => {this.handleName(event)}} required/>
-                                                            </div>
-                                                            <div className="col-12">
-                                                                <label htmlFor="phone">Phone :</label>
-                                                                <input type="number" id="phone" onChange={event => {this.handlePhone(event)}} required/>
-                                                            </div>
-                                                    </div>
-                                                    <button type="submit">Submit</button>
-                                                </form>
-                                            </div>
-                                        ]); 
-                                        break;
-                                        default: return <div></div> 
-                                    }
-                            })()}
-                        </div>
-                    </div>
+                    <BookingForm userName={this.state.name} userFirstname={this.state.firstname} userPhone={this.state.phone} handleSubmit={this.handleSubmit} handlePhone={this.handlePhone} handleFirstname={this.handleFirstname} handleName={this.handleName} handleCivility={this.handleCivility} reservationTime={this.state.reservationTime} startDate={this.state.startDate} globalReservation={this.state.globalReservation} selectedOption={this.state.selectedOption}/>
                 </div>
                 <div>
-                    <div className="col-12">
-                        <div className="row">
-                            {(() => {switch (this.state.reservation === "ok") {
-                                        case true : return ([
-                                            <div id="booking_information" key="1"  className="container">
-                                                <h2>Your reservation is confirmed ! </h2>
-                                                {this.state.globalInformation.map(function(item, i){
-                                                    return([<div key={i}>
-                                                        <div className="item"  >Hello <span className="">{item.civility}</span> <span>{item.name}</span>
-                                                        <br></br>
-                                                        We have the pleasure to inform you that your reservation has been confirmed. Please find below the booking details:
-                                                        <br></br>
-                                                        <ul>
-                                                            <li>Table set: {item.table}</li>
-                                                            <li>Date: {item.date}</li>
-                                                            <li>Hour: {item.time}</li>
-                                                            <li>Contact: {item.phone}</li>
-                                                        </ul>
-                                                        <br></br>
-                                                        Thanks for choosing our services !
-                                                        </div>
-                                                    </div>])
-                                                })}
-                                            </div>
-                                        ]); 
-                                        break;
-                                        default: return <div></div> 
-                                    }
-                            })()}
-                        </div>
-                    </div>
+                   <BookingConfirmation reservation={this.state.reservation} startDate={this.state.startDate} globalInformation={this.state.globalInformation}/> 
                 </div>
             </div>
         )
