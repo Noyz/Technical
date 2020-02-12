@@ -1,0 +1,130 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+li{
+  list-style-type: none;
+}
+
+.App {
+  text-align: center;
+  list-style-type: none;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+label{
+  margin-right:10px;
+}
+
+#booking_picker, #booking_information, #booking_summary{
+    margin-top:20px;
+    border-radius: 0;
+    box-shadow: 1px 1px 5px black;
+    padding:10px;
+}
+
+
+
+#booking_summary{
+  border:2px solid green;
+}
+.schedule_item_container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.eating_time{
+  font-style:italic;
+  font-weight:bold;
+}
+
+.item{
+  margin:5px;
+  padding:5px;
+  z-index:0;
+}
+
+.reservation_info{
+  font-style:italic;
+  font-weight: 500;
+}
+
+#civility{
+  display:flex;
+  justify-content: center;
+
+}
+
+.civility_radio{
+  margin-top:7px;
+}
+
+
+.mylogo{
+  margin:15px
+}
+.formInput{
+  margin-top:10px;
+}
+.styleInput{
+    position: relative;
+    font-size: 14px;
+    letter-spacing: .01rem;
+    z-index: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-left: 48px;
+    margin-left: 0;
+    background: #FFFFFF;
+    border: 1px solid #CACACA;
+    border-radius: 5px;
+    line-height: 25px;
+    height: 35px;
+    width: 300px;
+    outline: none;
+    z-index:101;
+}
+
