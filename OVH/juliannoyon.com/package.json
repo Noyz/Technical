@@ -22,7 +22,7 @@
     "gulp-load-plugins": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
-    "node-sass": "^4.9.2",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.0.3",
     "webpack": "^4.16.3"
   }
